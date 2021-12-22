@@ -1,0 +1,57 @@
+﻿@model InAndOut.Models.Item
+<br/>
+<br/>
+
+<h2 class="text-center text-success">Create new item</h2>
+<br/>
+<br/>
+
+<div class="container border">
+
+
+    <form method="post">
+        <input asp-for="Id" type="hidden" />
+        <div asp-validation-summary="ModelOnly"></div>
+        <br />
+        <div class="form-grop row p-3 ml-4">
+            <div class="col-4">
+                <label asp-for="Name" style="font-weight:bold"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Name" class="form-control text-dark" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row form-grop p-3 ml-4">
+            <div class="col-4">
+                <label asp-for="Borrower" style="font-weight:bold"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Borrower" class="form-control" />
+                <span asp-validation-for="Borrower" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row form-grop p-3 ml-4">
+            <div class="col-4">
+                <label asp-for="Lender" style="font-weight:bold"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Lender" class="form-control" />
+                <span asp-validation-for="Lender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row form-group p-2 ml-4">
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary text-white w-100">Create</button>
+            </div>
+            <div class="col-3 offset-3">
+                <a asp-action="Index" class="btn btn-dark text-white w-100">Back to list</a>
+            </div>
+        </div>
+    </form>
+
+</div>
+@section Scripts{
+<partial name="_ValidationScriptsPartial"></partial>
+}
